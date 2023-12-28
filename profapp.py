@@ -14,7 +14,8 @@ app = flask.Flask(__name__, template_folder=".")
 app.secret_key = os.environ["SECRET_KEY"]
 
 dotenv.load_dotenv()
-ADMIN_USERS = os.environ["ADMIN_USERS"]
+admin_users_str = os.environ["ADMIN_USERS"]
+ADMIN_USERS = eval(admin_users_str)
 
 # ----------------------------------------------------------------------
 
